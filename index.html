@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>三六六集团招聘简章</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.3/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+        
+        :root {
+            --primary: #3b82f6;
+            --primary-dark: #2563eb;
+            --secondary: #10b981;
+            --light-bg: #f9fafb;
+            --dark-bg: #1f2937;
+            --light-card: #ffffff;
+            --dark-card: #374151;
+            --light-text: #1f2937;
+            --dark-text: #f3f4f6;
+        }
+        
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        .light {
+            --bg-color: var(--light-bg);
+            --text-color: var(--light-text);
+            --card-bg: var(--light-card);
+            --border-color: #e5e7eb;
+        }
+        
+        .dark {
+            --bg-color: var(--dark-bg);
+            --text-color: var(--dark-text);
+            --card-bg: var(--dark-card);
+            --border-color: #4b5563;
+        }
+        
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+        
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            border-color: var(--primary);
+        }
+        
+        .btn {
+            transition: transform 0.2s, background-color 0.2s;
+        }
+        
+        .btn:hover {
+            transform: scale(1.05);
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.6s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .job-list::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .job-list::-webkit-scrollbar-track {
+            background: var(--bg-color);
+        }
+        
+        .job-list::-webkit-scrollbar-thumb {
+            background-color: var(--primary);
+            border-radius: 20px;
+        }
+        
+        /* 特定的职位卡片样式 */
+        .job-card-1 { border-left: 4px solid #3b82f6; }
+        .job-card-2 { border-left: 4px solid #10b981; }
+        .job-card-3 { border-left: 4px solid #f59e0b; }
+        .job-card-4 { border-left: 4px solid #ef4444; }
+        .job-card-5 { border-left: 4px solid #8b5cf6; }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- 顶部导航 -->
+    <nav class="sticky top-0 z-50 bg-white dark:bg-gray-800 shadow-md">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <span class="text-primary font-bold text-xl md:text-2xl">三六六集团</span>
+                <span class="text-gray-500 dark:text-gray-400 text-sm md:text-base">人才招聘</span>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700">
+                    <i class="fas fa-sun text-yellow-500 dark:hidden"></i>
+                    <i class="fas fa-moon text-blue-300 hidden dark:block"></i>
+                </button>
+                <a href="#contact" class="hidden md:inline-block bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-lg transition-all btn">
+                    立即联系
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要内容 -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- 公司介绍 -->
+        <section id="company" class="mb-16 section">
+            <div class="text-center mb-12 fade-in">
+                <h1 class="text-3xl md:text-4xl font-bold mb-3">公司简介</h1>
+                <div class="w-24 h-1 bg-primary mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="card rounded-xl p-6 md:p-8 shadow-lg mb-8 fade-in">
+                <div class="grid md:grid-cols-5 gap-6">
+                    <div class="md:col-span-3">
+                        <p class="mb-4 text-gray-700 dark:text-gray-300 leading-relaxed">
+                            苏州三六六教育投资有限公司创始于2008年，总部位于苏州市姑苏区。经过16年的发展，公司立足苏州，在江苏、安徽、浙江、上海、深圳、香港、澳大利亚墨尔本等地设有分支机构，业务范围涵盖教育培训、文化旅游、影视出版、农业开发、商贸餐饮、网络营销等。
+                        </p>
+                        <p class="mb-4 text-gray-700 dark:text-gray-300 leading-relaxed">
+                            公司现有员工1000余人，党团工会组织齐全。"听党话，跟党走"，公司党组织一直把党建工作和公司本职工作完美融合，充分发挥党员的先锋模范作用，公司100多名党员和骨干员工基本重合。
+                        </p>
+                        <p class="mb-4 text-gray-700 dark:text-gray-300 leading-relaxed">
+                            公司一直秉承"依法经营、稳步发展"的经营理念，得到各业务主管部门和属地肯定。公司被税务部门评为A级纳税信用等级，公司董事长被姑苏区法院和税务局聘为特约监督员。
+                        </p>
+                    </div>
+                    <div class="md:col-span-2">
+                        <div class="bg-gray-100 dark:bg-gray-700 p-5 rounded-lg">
+                            <h3 class="text-lg font-semibold mb-4 flex items-center">
+                                <i class="fas fa-award text-primary mr-2"></i>企业荣誉
+                            </h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                    <span>姑苏区先进基层党组织</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                    <span>教育部民办教育先进党建工作案例</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                    <span>A级纳税信用等级</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                    <span>首批"劳模育人实践基地"</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                    <span>苏州市工人先锋号</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-6 fade-in">
+                <div class="card rounded-xl p-6 shadow-lg">
+                    <h3 class="text-lg font-semibold mb-3 flex items-center">
+                        <i class="fas fa-handshake text-primary mr-2"></i>社会责任
+                    </h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        积极承担社会责任、服务广大群众，一直是公司的发展理念。在苏州市文明办的指导下，公司与轨道交通、中国联通、市民卡公司等成立了企业社会责任助残联盟，并连续多年担任常务副理事长，为残疾人的福利事业做出充分贡献，多次受到苏州市委、市政府表彰。
+                    </p>
+                </div>
+                
+                <div class="card rounded-xl p-6 shadow-lg">
+                    <h3 class="text-lg font-semibold mb-3 flex items-center">
+                        <i class="fas fa-graduation-cap text-primary mr-2"></i>教育培训业务
+                    </h3>
+                    <p class="text-gray-700 dark:text-gray-300 mb-3">
+                        在教育培训方面，公司依托浙江大学、中国科大、华中科大、苏州大学等高校，主要在长三角地区开展4大类培训业务：
+                    </p>
+                    <div class="grid grid-cols-2 gap-2">
+                        <div class="bg-blue-50 dark:bg-blue-900/30 p-2 rounded text-center">党政干部培训</div>
+                        <div class="bg-green-50 dark:bg-green-900/30 p-2 rounded text-center">企业管理培训</div>
+                        <div class="bg-yellow-50 dark:bg-yellow-900/30 p-2 rounded text-center">青少年校外培训</div>
+                        <div class="bg-purple-50 dark:bg-purple-900/30 p-2 rounded text-center">社区培训</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 招聘信息 -->
+        <section id="jobs" class="mb-16 section">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-3">招聘岗位</h2>
+                <div class="w-24 h-1 bg-primary mx-auto rounded-full"></div>
+                <p class="mt-4 text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                    <i class="fas fa-home text-primary mr-2"></i>面试福利：外地求职者来我公司面试，面试期间，免费提供366青年驿站入住！入职后提供跟温暖的家一样的员工宿舍！
+                </p>
+            </div>
+            
+            <div class="job-list space-y-6 overflow-auto pb-4">
+                <!-- 岗位1 -->
+                <div class="card job-card-1 rounded-xl p-6 shadow-lg">
+                    <div class="md:flex justify-between items-start">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 dark:text-gray-100">初高中理科教师</h3>
+                            <p class="text-gray-500 dark:text-gray-400 mb-2"><span class="text-sm bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-100 px-2 py-0.5 rounded">纯教学+生源有保障</span></p>
+                        </div>
+                        <div class="md:text-right mt-2 md:mt-0">
+                            <p class="text-gray-600 dark:text-gray-300"><i class="fas fa-graduation-cap mr-1"></i> 学历要求：本科及以上</p>
+                            <p class="text-primary font-semibold"><i class="fas fa-yuan-sign mr-1"></i> 薪资范围：6K-12K</p>
+                        </div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-6 mt-6">
+                        <div>
+                            <h4 class="font-semibold text-gray-800 dark:text-gray-200 mb-2 flex items-center">
+                                <i class="fas fa-tasks text-primary mr-2"></i>岗位职责
+                            </h4>
+                            <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+                                <li class="flex items-start">
+                                    <span class="text-primary mr-2">1.</span>
+                                    <span>针对学生实际情况，个性化地进行学习能力开发及教学工作。</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-primary mr-2">2.</span>
+                                    <span>积极参与各类教学培训、教研等活动。完成备课、磨课等相关任务。</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-primary mr-2">3.</span>
+                                    <span>授课期间因时制宜分阶段组织测验活动，以检验学生接受辅导的成效。</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-primary mr-2">4.</span>
+                                    <span>关爱学生身心健康，帮助学生树立积极的学习心态和良好的学习习惯。</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-primary mr-2">5.</span>
+                                    <span>配合学校需求开展公开课、讲座等市场活动。</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-primary mr-2">6.</span>
+                                    <span>做好日常的教学服务工作，保持家校之间的良好沟通。</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-primary mr-2">7.</span>
+                                    <span>无班主任或销售性质。</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-gray-800 dark:text-gray-200 mb-2 flex items-center">
+                                <i class="fas fa-user-check text-primary mr-2"></i>任职资格
+                            </h4>
+                            <ul class="space-y-2 text-gray-700 dark:text-gray-300 mb-4">
+                                <li class="flex items-start">
+                                    <span class="text-primary mr-2">1.</span>
+                                    <span>有家教经验或学校教学经验或培训机构任教者优先。</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-primary mr-2">2.</span>
+                                    <span>熟悉学生的生活及学习特点，善于因材施教，能开拓发掘组织多种教学方式，灵活教学。</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-primary mr-2">3.</span>
+                                    <span>普通话标准，富有亲和力，有耐心，有责任心，擅长与学生进行沟通交流。</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-primary mr-2">4.</span>
+                                    <span>热爱教师工作，大专及以上学历，可以接受优秀应届生。</span>
+                                </li>
+                            </ul>
+                            
+                            <div class="mt-4">
+                                <h4 class="font-semibold text-gray-800 dark:text-gray-200 mb-2 flex items-center">
+                                    <i class="fas fa-clock text-primary mr-2"></i>工作时间及地点
+                                </h4>
+                                <p class="text-gray-700 dark:text-gray-300">上六休一，周中休息。</p>
+                                <p class="text-gray-700 dark:text-gray-300">苏州大市范围内都有校区（姑苏区、吴中区、吴江、新区、园区、相城区、昆山、太仓、沙溪等，提供住宿，就近安排）</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 bg-gray-50 dark:bg-gray-800/50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-gray-800 dark:text-gray-200 mb-2 flex items-center">
+                            <i class="fas fa-gift text-primary mr-2"></i>福利待遇
+                        </h4>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div>
+                                <ul class="space-y-1 text-gray-700 dark:text-gray-300">
+                                    <li class="flex items-center">
+                                        <i class="fas fa-circle text-xs text-primary mr-2"></i>
+                                        <span>保底薪资、课时费、结课费</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-circle text-xs text-primary mr-2"></i>
+                                        <span>续费奖励、星级教师课时奖励</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-circle text-xs text-primary mr-2"></i>
+                                        <span>全勤奖、加薪工资等</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <ul class="space-y-1 text-gray-700 dark:text-gray-300">
+                                    <li class="flex items-center">
+                                        <i class="fas fa-circle text-xs text-primary mr-2"></i>
+                                        <span>缴纳五险一金</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-circle text-xs text-primary mr-2"></i>
+                                        <span>生日福利+结婚福利</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-circle text-xs text-primary mr-2"></i>
+                                        <span>带薪年假+节日礼品</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <ul class="space-y-1 text-gray-700 dark:text-gray-300">
+                                    <li class="flex items-center">
+                                        <i class="fas fa-circle text-xs text-primary mr-2"></i>
+                                        <span>丰富多彩的团建活动</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-circle text-xs text-primary mr-2"></i>
+                                        <span>境内外旅游活动</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-circle text-xs text-primary mr-2"></i>
+                                        <span>年终奖、骨干员工利润分红</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 岗位2 -->
+                <div class="card job-card-2 rounded-xl p-6 shadow-lg">
+                    <div class="md:flex justify-between items-start">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 dark:text-gray-100">班主任/学管师</h3>
+                            <p class="text-gray-500 dark:text-gray-400 mb-2"><span class="text-sm bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-100 px-2 py-0.5 rounded">老客户维护工作，不负责教学</span></p>
+                        </div>
+                        <div class="md:text-right mt-2 md:mt-0">
+                            <p class="text-gray-600 dark:text-gray-300"><i class="fas fa-graduation-cap mr-1"></i> 学历要求：大专及以上</p>
+                            <p class="text-primary font-semibold"><i class="fas fa-yuan-sign mr-1"></i> 薪资范围：5K-15K</p>
+                        </div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-6 mt-6">
+                        <div>
+                            <h4 class="font-semibold text-gray-800 dark:text-gray-200 mb-2 flex items-center">
+                                <i class="fas fa-tasks text-primary mr-2"></i>岗位职责
+                            </h4>
+                            <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+                                <li class="flex items-start">
+                                    <span class="text-primary mr-2">1.</span>
+                                    <span>负责学员督导工作，做出学习规划，定时与家长沟通学生的学习情况。</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-primary mr-2">2.</span>
+                                    <span>负责学员与家长的日常接待工作。</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-primary mr-2">3.</span>
+                                    <span>负责办理学员入学的相关手续，并将学员的相关信息进行录入及整理。</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-primary mr-2">4.</span>
+                                    <span>协助咨询顾问解决招生咨询中的专业问题。</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-primary mr-2">5.</span>
+                                    <span>协助校区主管、课程等相关事宜。</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-primary mr-2">6.</span>
+                                    <span>管理班级学员学习、生活情况，负责与家长沟通并定期反馈学员学习问题。</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-gray-800 dark:text-gray-200 mb-2 flex items-center">
+                                <i class="fas fa-user-check text-primary mr-2"></i>任职资格
+                            </h4>
+                            <ul class="space-y-2 text-gray-700 dark:text-gray-300 mb-4">
+                                <li class="flex items-start">
+                                    <span class="text-primary mr-2">1.</span>
+                                    <span>专科及以上学历。</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-primary mr-2">2.</span>
+                                    <span>有亲和力，有耐心，具有良好的职业形象。</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-primary mr-2">3.</span>
+                                    <span>热爱教育行业，有良好的语言沟通及表达能力。</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-primary mr-2">4.</span>
+                                    <span>执行力强，有责任心和进取心，能够承受较大的工作压力。</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-primary mr-2">5.</span>
+                                    <span>熟练使用办公软件及办公自动化，善于总结、学习、文字能力强。</span>
+                                </li>
+                            </ul>
+                            
+                            <div class="mt-4">
+                                <h4 class="font-semibold text-gray-800 dark:text-gray-200 mb-2 flex items-center">
+                                    <i class="fas fa-clock text-primary mr-2"></i>工作时间及地点
+                                </h4>
+                                <p class="text-gray-700 dark:text-gray-300">上六休一，周中休息。</p>
+                                <p class="text-gray-700 dark:text-gray-300">苏州大市范围内都有校区（姑苏区、吴中区、吴江、新区、园区、相城区、昆山、太仓、沙溪等，提供住宿，就近安排）</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 岗位3 -->
+                <div class="card job-card-3 rounded-xl p-6 shadow-lg">
+                    <div class="md:flex justify-between items-start">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 dark:text-gray-100">课程顾问/教育咨询师</h3>
+                            <p class="text-gray-500 dark:text-gray-400 mb-2"><span class="text-sm bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-100 px-2 py-0.5 rounded">咨询服务、面销，不负责教学</span></p>
+                        </div>
+                        <div class="md:text-right mt-2 md:mt-0">
+                            <p class="text-gray-600 dark:text-gray-300"><i class="fas fa-graduation-cap mr-1"></i> 学历要求：大专及以上</p>
+                            <p class="text-primary font-semibold"><i class="fas fa-yuan-sign mr-1"></i> 薪资范围：5K-15K</p>
+                        </div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-6 mt-6">
+                        <div>
+                            <h4 class="font-semibold text-gray-800 dark:text-gray-200 mb-2 flex items-center">
+                                <i class="fas fa-tasks text-primary mr-2"></i>岗位职责
+                            </h4>
+                            <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+                                <li class="flex items-start">
+                                    <span class="text-primary mr-2">1.</span>
+                                    <span>耐心并有一定策略地接听家长的电话，给家长提供专业的咨询。</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-primary mr-2">2.</span>
+                                    <span>引导家长带孩子上门并接待咨询及协议谈判签署工作。</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-primary mr-2">3.</span>
+                                    <span>对孩子进行全面的测试和分析，使家长认可。</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-primary mr-2">4.</span>
+                                    <span>制定孩子长期的辅导计划与方案，与家长签订辅导协议。</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-primary mr-2">5.</span>
+                                    <span>跟踪客户辅导项目实施及客户维护，协调教务工作，保证服务质量；建立客户电子档案及负责客户维护。</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-gray-800 dark:text-gray-200 mb-2 flex items-center">
+                                <i class="fas fa-user-check text-primary mr-2"></i>任职资格
+                            </h4>
+                            <ul class="space-y-2 text-gray-700 dark:text-gray-300 mb-4">
+                                <li class="flex items-start">
+                                    <span class="text-primary mr-2">1.</span>
+                                    <span>专科及以上学历。</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-primary mr-2">2.</span>
+                                    <span>有亲和力，有耐心，具有良好的职业形象。</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-primary mr-2">3.</span>
+                                    <span>热爱教育行业，有良好的语言沟通及表达能力。有销售经验者优先。</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-primary mr-2">4.</span>
+                                    <span>执行力强，有责任心和进取心，能够承受较大的工作压力。</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-primary mr-2">5.</span>
+                                    <span>熟练使用办公软件及办公自动化，善于总结、学习、文字能力强。</span>
+                                </li>
+                            </ul>
+                            
+                            <div class="mt-4">
+                                <h4 class="font-semibold text-gray-800 dark:text-gray-200 mb-2 flex items-center">
+                                    <i class="fas fa-clock text-primary mr-2"></i>工作时间及地点
+                                </h4>
+                                <p class="text-gray-700 dark:text-gray-300">上六休一，周中休息。</p>
+                                <p class="text-gray-700 dark:text-gray-300">苏州大市范围内都有校区（姑苏区、吴中区、吴江、新区、园区、相城区、昆山、太仓、沙溪等，提供住宿，就近安排）</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 岗位4 -->
+                <div class="card job-card-4 rounded-xl p-6 shadow-lg">
+                    <div class="md:flex justify-between items-start">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 dark:text-gray-100">市场专员</h3>
+                        </div>
+                        <div class="md:text-right mt-2 md:mt-0">
+                            <p class="text-gray-600 dark:text-gray-300"><i class="fas fa-graduation-cap mr-1"></i> 学历要求：不限</p>
+                            <p class="text-primary font-semibold"><i class="fas fa-yuan-sign mr-1"></i> 薪资范围：5K-15K</p>
+                        </div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-6 mt-6">
+                        <div>
+                            <h4 class="font-semibold text-gray-800 dark:text-gray-200 mb-2 flex items-center">
+                                <i class="fas fa-tasks text-primary mr-2"></i>岗位职责
+                            </h4>
+                            <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+                                <li class="flex items-start">
+                                    <span class="text-primary mr-2">1.</span>
+                                    <span>线上通过朋友圈，视频号，抖音等渠道进行招生宣传推广。</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-primary mr-2">2.</span>
+                                    <span>线下通过摆台，发传单，做活动拓宽市场。</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-primary mr-2">3.</span>
+                                    <span>负责收集客户资源，进行数据整合，有一定的客户群分析能力。</span>
+                                </li>
+                            </ul>
+                            
+                            <div class="mt-6">
+                                <h4 class="font-semibold text-gray-800 dark:text-gray-200 mb-2 flex items-center">
+                                    <i class="fas fa-gift text-primary mr-2"></i>福利待遇
+                                </h4>
+                                <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+                                    <li class="flex items-center">
+                                        <i class="fas fa-circle text-xs text-primary mr-2"></i>
+                                        <span>基本工资+各类提成+车补+高温补贴等</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-circle text-xs text-primary mr-2"></i>
+                                        <span>缴纳五险一金</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-circle text-xs text-primary mr-2"></i>
+                                        <span>生日福利+结婚福利+带薪年假+节日礼品</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-circle text-xs text-primary mr-2"></i>
+                                        <span>丰富多彩的团建活动、境内外旅游活动</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-gray-800 dark:text-gray-200 mb-2 flex items-center">
+                                <i class="fas fa-user-check text-primary mr-2"></i>任职资格
+                            </h4>
+                            <ul class="space-y-2 text-gray-700 dark:text-gray-300 mb-4">
+                                <li class="flex items-start">
+                                    <span class="text-primary mr-2">1.</span>
+                                    <span>专业不限，能吃苦，男生优先。</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-primary mr-2">2.</span>
+                                    <span>有亲和力，有耐心，具有良好的职业形象。</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-primary mr-2">3.</span>
+                                    <span>热爱教育行业，有良好的语言沟通及表达能力。有销售经验者优先。</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-primary mr-2">4.</span>
+                                    <span>执行力强，有责任心和进取心，能够承受较大的工作压力。</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-primary mr-2">5.</span>
+                                    <span>熟练使用各类视频制作APP，善于总结、学习、文字能力强。</span>
+                                </li>
+                            </ul>
+                            
+                            <div class="mt-4">
+                                <h4 class="font-semibold text-gray-800 dark:text-gray-200 mb-2 flex items-center">
+                                    <i class="fas fa-clock text-primary mr-2"></i>工作时间及地点
+                                </h4>
+                                <p class="text-gray-700 dark:text-gray-300">上六休一，周中休息。</p>
+                                <p class="text-gray-700 dark:text-gray-300">苏州大市范围内都有校区（姑苏区、吴中区、吴江、新区、园区、相城区、昆山、太仓、沙溪等，提供住宿，就近安排）</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 岗位5 -->
+                <div class="card job-card-5 rounded-xl p-6 shadow-lg">
+                    <div class="md:flex justify-between items-start">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 dark:text-gray-100">行政助理/前台</h3>
+                            <p class="text-gray-500 dark:text-gray-400 mb-2"><span class="text-sm bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-100 px-2 py-0.5 rounded">纯文职，无销售性质</span></p>
+                        </div>
+                        <div class="md:text-right mt-2 md:mt-0">
+                            <p class="text-gray-600 dark:text-gray-300"><i class="fas fa-graduation-cap mr-1"></i> 学历要求：大专及以上</p>
+                            <p class="text-primary font-semibold"><i class="fas fa-yuan-sign mr-1"></i> 薪资范围：4K-7K</p>
+                        </div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-6 mt-6">
+                        <div>
+                            <h4 class="font-semibold text-gray-800 dark:text-gray-200 mb-2 flex items-center">
+                                <i class="fas fa-tasks text-primary mr-2"></i>岗位职责
+                            </h4>
+                            <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+                                <li class="flex items-start">
+                                    <span class="text-primary mr-2">1.</span>
+                                    <span>负责前台来访人员接待工作，前台区域卫生管理。</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-primary mr-2">2.</span>
+                                    <span>校区日常行政类事务处理，办公用品采购报销等。</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-primary mr-2">3.</span>
+                                    <span>负责员工各类人事手续办理、考勤统计、社保公积金缴纳等事宜。</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-primary mr-2">4.</span>
+                                    <span>各项人事数据报表、财务数据报表填报工作。</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-primary mr-2">5.</span>
+                                    <span>负责各类系统数据的录入、审批等工作。</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-primary mr-2">6.</span>
+                                    <span>领导安排的其他工作配合。</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-gray-800 dark:text-gray-200 mb-2 flex items-center">
+                                <i class="fas fa-user-check text-primary mr-2"></i>任职资格
+                            </h4>
+                            <ul class="space-y-2 text-gray-700 dark:text-gray-300 mb-4">
+                                <li class="flex items-start">
+                                    <span class="text-primary mr-2">1.</span>
+                                    <span>大专及以上学历，可以接受优秀应届生。</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-primary mr-2">2.</span>
+                                    <span>熟练使用办公软件及打印机、扫描仪等办公设备。</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-primary mr-2">3.</span>
+                                    <span>普通话标准，富有亲和力，有耐心，有责任心，工作踏实细心。</span>
+                                </li>
+                            </ul>
+                            
+                            <div class="mt-6">
+                                <h4 class="font-semibold text-gray-800 dark:text-gray-200 mb-2 flex items-center">
+                                    <i class="fas fa-gift text-primary mr-2"></i>福利待遇
+                                </h4>
+                                <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+                                    <li class="flex items-center">
+                                        <i class="fas fa-circle text-xs text-primary mr-2"></i>
+                                        <span>基本工资、工作绩效、每月绩效奖金</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-circle text-xs text-primary mr-2"></i>
+                                        <span>全勤奖、加薪工资等</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-circle text-xs text-primary mr-2"></i>
+                                        <span>缴纳五险一金</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-circle text-xs text-primary mr-2"></i>
+                                        <span>生日福利+结婚福利+带薪年假</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 联系方式 -->
+        <section id="contact" class="mb-16 section">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-3">联系我们</h2>
+                <div class="w-24 h-1 bg-primary mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="card rounded-xl p-8 shadow-lg">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h3 class="text-xl font-bold mb-4 flex items-center">
+                            <i class="fas fa-building text-primary mr-2"></i>招聘单位
+                        </h3>
+                        <ul class="space-y-4 text-gray-700 dark:text-gray-300">
+                            <li class="flex items-start">
+                                <i class="fas fa-briefcase text-primary mt-1 mr-3 w-5"></i>
+                                <div>
+                                    <span class="font-semibold">公司：</span>
+                                    <span>三六六集团</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-users text-primary mt-1 mr-3 w-5"></i>
+                                <div>
+                                    <span class="font-semibold">部门：</span>
+                                    <span>人事部</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-phone-alt text-primary mt-1 mr-3 w-5"></i>
+                                <div>
+                                    <span class="font-semibold">联系电话：</span>
+                                    <a href="tel:13913156572" class="text-primary hover:underline">13913156572</a>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-ad text-primary mt-1 mr-3 w-5"></i>
+                                <div>
+                                    <span class="font-semibold">宣传推广：</span>
+                                    <span>网络部</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+                        <h3 class="text-xl font-bold mb-4 text-center">加入我们</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-center mb-6">
+                            欢迎加入三六六集团大家庭，共同成长，共创未来！
+                        </p>
+                        <div class="flex justify-center">
+                            <a href="tel:13913156572" class="bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-lg shadow-md transition-all btn flex items-center">
+                                <i class="fas fa-phone-alt mr-2"></i>
+                                立即联系
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- 页脚 -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">三六六集团</h3>
+                    <p class="text-gray-400 mb-4">苏州三六六教育投资有限公司创始于2008年，总部位于苏州市姑苏区。经过16年的发展，公司立足苏州，在江苏、安徽、浙江、上海、深圳、香港、澳大利亚墨尔本等地设有分支机构。</p>
+                    <div>
+                        <p class="text-gray-400">技术支持: 卡拉肖克倩</p>
+                        <p class="text-gray-400">个人微信: qian759893991</p>
+                    </div>
+                </div>
+                
+                <div class="md:pl-12">
+                    <h3 class="text-xl font-bold mb-4">关注我们</h3>
+                    <div class="grid grid-cols-3 gap-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors flex flex-col items-center">
+                            <i class="fab fa-twitter text-2xl mb-1"></i>
+                            <span class="text-sm">Twitter</span>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors flex flex-col items-center">
+                            <i class="fab fa-weixin text-2xl mb-1"></i>
+                            <span class="text-sm">微信</span>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors flex flex-col items-center">
+                            <i class="fab fa-qq text-2xl mb-1"></i>
+                            <span class="text-sm">QQ</span>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors flex flex-col items-center">
+                            <i class="fas fa-music text-2xl mb-1"></i>
+                            <span class="text-sm">抖音</span>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors flex flex-col items-center">
+                            <i class="fas fa-video text-2xl mb-1"></i>
+                            <span class="text-sm">快手</span>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors flex flex-col items-center">
+                            <i class="fas fa-book text-2xl mb-1"></i>
+                            <span class="text-sm">小红书</span>
+                        </a>
+                    </div>
+                    <div class="mt-6 pt-6 border-t border-gray-700">
+                        <p class="text-gray-400">© 2025 三六六集团. 版权所有</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // 主题切换功能
+        const themeToggle = document.getElementById('theme-toggle');
+        const htmlElement = document.documentElement;
+        
+        // 检查系统主题偏好
+        function getPreferredTheme() {
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                return 'dark';
+            }
+            return 'light';
+        }
+        
+        // 设置初始主题
+        function setTheme(theme) {
+            if (theme === 'dark') {
+                htmlElement.classList.remove('light');
+                htmlElement.classList.add('dark');
+            } else {
+                htmlElement.classList.remove('dark');
+                htmlElement.classList.add('light');
+            }
+        }
+        
+        // 初始化主题
+        setTheme(getPreferredTheme());
+        
+        // 切换主题事件
+        themeToggle.addEventListener('click', () => {
+            if (htmlElement.classList.contains('dark')) {
+                setTheme('light');
+            } else {
+                setTheme('dark');
+            }
+        });
+        
+        // 监听系统主题变化
+        if (window.matchMedia) {
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+                setTheme(e.matches ? 'dark' : 'light');
+            });
+        }
+        
+        // 滚动动画效果
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.section');
+            
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+            
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+            
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
